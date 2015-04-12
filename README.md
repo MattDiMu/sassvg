@@ -2,6 +2,8 @@
 [![Code Climate](https://codeclimate.com/github/MattDiMu/sassvg/badges/gpa.svg)](https://codeclimate.com/github/MattDiMu/sassvg)
 [![Test Coverage](https://codeclimate.com/github/MattDiMu/sassvg/badges/coverage.svg)](https://codeclimate.com/github/MattDiMu/sassvg)
 [![Build Status](https://travis-ci.org/MattDiMu/sassvg.svg)](https://travis-ci.org/MattDiMu/sassvg)
+[![dependencies](https://david-dm.org/MattDiMu/gulp-sassvg.svg)](https://david-dm.org/MattDiMu/gulp-sassvg)
+[![devDependencies](https://david-dm.org/MattDiMu/gulp-sassvg/dev-status.svg)](https://david-dm.org/MattDiMu/gulp-sassvg)
 
 # sassvg
 Currently under development! Come back later :)
