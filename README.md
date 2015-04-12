@@ -6,6 +6,7 @@
 # sassvg
 Currently under development! Come back later :)
 
+Here are currently only some ideas how to implement
 
 # less support could look something like this:
 .lessvg-data(@icon-name; @color: green){
@@ -34,3 +35,7 @@ Currently under development! Come back later :)
 # stylus support could be achieved with hashs:
 http://learnboost.github.io/stylus/docs/hashes.html
 
+
+#fallback
+a rework plugin or even better a (postcss)[] plugin could do the work by parsing the css-file, extracting inline-svgs (maybe a marker would help), creating pngs (grunticon-style), inlining them with the same selector and a .no-svg pre-selector
+to avoid browsers downloading them, they should not be inlined, but created as png-files...conditional comments suck as other non-svg-browsers exist as well
