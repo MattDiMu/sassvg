@@ -39,3 +39,5 @@ http://learnboost.github.io/stylus/docs/hashes.html
 #fallback
 a rework plugin or even better a (postcss)[] plugin could do the work by parsing the css-file, extracting inline-svgs (maybe a marker would help), creating pngs (grunticon-style), inlining them with the same selector and a .no-svg pre-selector
 to avoid browsers downloading them, they should not be inlined, but created as png-files...conditional comments suck as other non-svg-browsers exist as well
+
+To create the png at the right size, a default-size should be specified (overridable via option) and the affected selector parsed for any background-size values
