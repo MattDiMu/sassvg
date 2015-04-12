@@ -7,8 +7,7 @@
 Currently under development! Come back later :)
 
 
-# notice
-less support could look something like this:
+# less support could look something like this:
 .lessvg-data(@icon-name; @color: green){
   @fixed-data-string: "begin";
   @sassvg-arrow: " hallo, ich bin der string @{color} mit einer Farbe: @{color}";
@@ -30,3 +29,8 @@ less support could look something like this:
 .test2 { 
   .lessvg(arrow);
 }
+
+
+# stylus support could be achieved with hashs:
+http://learnboost.github.io/stylus/docs/hashes.html
+
