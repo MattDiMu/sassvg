@@ -6,3 +6,27 @@
 # sassvg
 Currently under development! Come back later :)
 
+
+# notice
+less support could look something like this:
+.lessvg-data(@icon-name; @color: green){
+  @fixed-data-string: "begin";
+  @sassvg-arrow: " hallo, ich bin der string @{color} mit einer Farbe: @{color}";
+  @sassvg-edge: " edge";
+  @lessvg: ~"@{fixed-data-string}@{sassvg-@{icon-name}}";
+}
+
+.lessvg(@icon-name; @color: green){
+ .lessvg-data(@icon-name, @color);
+  background-image: url("@{lessvg}");
+}
+
+.test {
+ .lessvg-data(arrow; blue);
+  content: @lessvg;
+}
+
+
+.test2 { 
+  .lessvg(arrow);
+}
