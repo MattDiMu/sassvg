@@ -10,6 +10,7 @@ Currently under development! Come back later :)
 
 Here are currently only some ideas how to implement
 
+
 #sass performance
 for maximum performance, each svg should be scoped in its own function and only implement the necessary variable interpolation:
 ```
@@ -86,3 +87,7 @@ a rework plugin or even better a (postcss)[] plugin could do the work by parsing
 to avoid browsers downloading them, they should not be inlined, but created as png-files...conditional comments suck as other non-svg-browsers exist as well
 
 To create the png at the right size, a default-size should be specified (overridable via option) and the affected selector parsed for any background-size values
+
+
+# misc notes
+handlebar-templates might not be necessary anymore, if the svgs (scoped in functions) are in a separate file. This cleans up the sass-file a lot (functions are called dynamically)
