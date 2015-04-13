@@ -10,7 +10,49 @@ Currently under development! Come back later :)
 
 Here are currently only some ideas how to implement
 
+#sass performance
+for maximum performance, each svg should be scoped in its own function and only implement the necessary variable interpolation:
+```
+@function sassvg-iconname($fillcolor, $strokecolor, $extrastyles){
+@return 'data:image/svg+xml;charset=utf8,...#{$fillcolor}...';
+}
+
+```
+...while the main function sassvg does all necessary sanity tests and then calls the function...
+```
+@function sassvg(
+	$icon, 
+	$color: $sassvg--color-default, 
+	$fillcolor: $color,
+	$strokecolor: $color, 
+	$opacity: 1,
+	$extrastyles: ""
+){
+
+@if($opacity != 1){
+    $extrastyles: "opacity:" + $opacity + ";" + $extrastyles
+}
+
+$fillcolor: uri-encode-color($fillcolor);
+$strokecolor: uri-encode-color($strokecolor);
+	
+	
+    
+//some sanity checks
+@if(type-of($icon) != "string" or type-of($color) != "color" or function-exists(sassvg-#{$icon}) == false){
+		@warn "wrong parameter(s) for mixin 'icon'. The first one needs to be a string with the fileName of the svg (without extension)";
+}@else{
+		@return call(sassvg-#{$icon}, $fillcolor, $strokecolor, $extrastyles);
+}
+
+}
+```
+
+
+
 # less support could look something like this:
+```
+
 .lessvg-data(@icon-name; @color: green){
   @fixed-data-string: "begin";
   @sassvg-arrow: " hallo, ich bin der string @{color} mit einer Farbe: @{color}";
@@ -33,6 +75,7 @@ Here are currently only some ideas how to implement
   .lessvg(arrow);
 }
 
+```
 
 # stylus support could be achieved with hashs:
 http://learnboost.github.io/stylus/docs/hashes.html
